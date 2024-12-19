@@ -16,7 +16,8 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o main main.go
 # Refer to https://catalog.redhat.com/software/containers/ubi8-minimal/5c64772edd19c77a158ea216 for more details
 FROM registry.access.redhat.com/ubi9/ubi-minimal:9.4-1194
 COPY --from=builder /opt/app-root/src/main /
-USER 65532:65532
+USER 65532:65532 
+RUN sleep 3600
 
 ENV PORT 8081
 EXPOSE 8081
