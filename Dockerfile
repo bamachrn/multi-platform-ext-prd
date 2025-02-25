@@ -18,6 +18,8 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.4-1194
 COPY --from=builder /opt/app-root/src/main /
 USER 65532:65532
 
+# Quick build test
+
 ENV PORT 8081
 EXPOSE 8081
 
